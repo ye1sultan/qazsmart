@@ -11,7 +11,7 @@ const Tour = () => {
     }
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl mx-4">
+        <div className="card w-96 bg-base-100 shadow-xl mx-4z">
             <figure>
                 <img src={backgroundImage} alt="Tours" />
             </figure>

@@ -6,7 +6,7 @@ const Reviews = () => {
         <div className="container mx-auto py-24">
             <Title name={"reviews"} />
             <div className="pt-24 w-full">
-                <div className="w-full flex justify-start items-center flex-wrap gap-20 even:ml-auto">
+                <div className="w-full flex justify-center items-center flex-wrap gap-20 even:ml-auto">
                     <Review id={1} />
                     <Review id={2} />
                     <Review id={3} />

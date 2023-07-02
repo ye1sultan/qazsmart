@@ -1,9 +1,9 @@
 import backgroundImage from '../assets/imgs/kz.jpg';
 
 const Review = ({ id }) => {
-    const isEven = id % 2 === 0;
+    // const isEven = id % 2 === 0;
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl max-w-5xl py-6 mx-4" style={{ marginLeft: isEven ? "auto" : "16px" }}>
+        <div className="card lg:card-side bg-base-100 shadow-xl max-w-5xl py-6 mx-8">
             <figure>
                 <img src={backgroundImage} alt="Album" className="mask mask-circle max-h-60" />
             </figure>

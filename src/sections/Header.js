@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
     return (
-        <header className="max-w-[1536px] w-full top-0 left-[50%] translate-x-[-50%] absolute py-4 px-6 text-black">
+        <header className="max-w-[1536px] w-full top-0 left-[50%] translate-x-[-50%] absolute py-4 px-6 text-base-content">
             <div className="navbar bg-transparent">
                 <div className="flex-1">
                     <a href="/" className="font-semibold text-4xl">QS</a>
@@ -16,7 +16,7 @@ const Header = () => {
                     <li>
                         <details className="dropdown">
                             <summary>
-                                <FontAwesomeIcon icon={faEarthAmericas} size='md' />
+                                <FontAwesomeIcon icon={faEarthAmericas} size='sm' />
                             </summary>
                             <ul className="shadow menu dropdown-content z-[1] bg-base-100 rounded-box text-lg">
                                 <li className="btn btn-ghost flex flex-row justify-start">
@@ -47,7 +47,7 @@ const Header = () => {
                             <li>
                                 <details className="dropdown">
                                     <summary>
-                                        <FontAwesomeIcon icon={faEarthAmericas} size='md' />
+                                        <FontAwesomeIcon icon={faEarthAmericas} size='sm' />
                                     </summary>
                                     <ul className="w-full translate-x-0 shadow menu dropdown-content z-[1] bg-base-100 rounded-box text-lg ml-0">
                                         <li className="btn btn-ghost flex flex-row justify-start">

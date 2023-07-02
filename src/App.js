@@ -1,6 +1,7 @@
 import Hero from "./sections/Hero";
-import Reviews from "./sections/Reviews";
 import Tours from "./sections/Tours";
+import Reviews from "./sections/Reviews";
+import Footer from "./sections/Footer";
 
 const App = () => {
 	return (
@@ -8,6 +9,7 @@ const App = () => {
 			<Hero />
 			<Tours />
 			<Reviews />
+			<Footer />
 		</div>
 	);
 }
