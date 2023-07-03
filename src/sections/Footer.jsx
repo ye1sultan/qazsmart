@@ -26,7 +26,7 @@ const Footer = () => {
                     <span className="footer-title">Newsletter</span>
                     <div className="form-control w-80">
                         <label className="label">
-                            <span className="label-text">Enter your email address</span>
+                            <span className="label-text text-neutral-content">Enter your email address</span>
                         </label>
                         <div className="relative">
                             <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
@@ -35,9 +35,9 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="footer items-center p-4 bg-neutral text-neutral-content justify-center">
+            <div className="container mx-auto footer items-center pl-10 md:pl-0 p-4 bg-neutral text-neutral-content justify-start md:justify-center">
                 <div className="items-center grid-flow-col">
-                    <a href="/" className="font-semibold text-4xl">QS</a>
+                    <a href="/" className="font-semibold text-2xl">QS</a>
                     <p>Copyright © 2023 - All right reserved</p>
                 </div>
                 <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
