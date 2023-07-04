@@ -14,8 +14,8 @@ const Hero = () => {
                 <div className="container mx-auto hero h-screen justify-start">
                     <div className="hero-content text-start text-neutral-content">
                         <div className="max-w-xl">
-                            <p className="mb-5 text-md lg:text-xl xl:text-2xl 2xl:text-3xl italic">Pick your tour today!</p>
-                            <h1 className="mb-5 text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold">Welcome to Kazakhstan</h1>
+                        <p className="mb-5 text-xl md:text-2xl lg:text-2xl xl:text-3xl italic">Explore today!</p>
+                            <h1 className="mb-5 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">Welcome to Kazakhstan</h1>
                             <button className="btn btn-sm md:btn-md lg:btn-lg ">Get Started</button>
                         </div>
                     </div>

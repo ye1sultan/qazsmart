@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+Main Primary color: sky-300 - background-color: rgb(125 211 252)
+Gray text/color: slate-500 - color: rgb(100 116 139)
+Red error/text/color: #ff0000
+
+*/

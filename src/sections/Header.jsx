@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
     return (
-        <header className="max-w-[1536px] w-full top-0 left-[50%] translate-x-[-50%] absolute py-4 px-6 text-base-content">
+        <header className="max-w-[1536px] w-full top-0 left-[50%] translate-x-[-50%] absolute py-4  text-base-content">
             <div className="navbar bg-transparent">
                 <div className="flex-1">
-                    <a href="/" className="font-semibold text-4xl">QS</a>
+                    <div href="/" className="font-semibold text-4xl sm:text-5xl">QS</div>
                 </div>
                 <ul className="menu menu-horizontal px-1 text-xl font-medium capitalize space-x-10 hidden lg:flex">
                     <li><a href="/">Tours</a></li>
