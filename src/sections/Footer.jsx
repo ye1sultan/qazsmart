@@ -1,49 +1,48 @@
+import { faInstagram, faTelegram, faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { faLocationDot, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Footer = () => {
     return (
-        <footer className="bg-neutral">
+        <footer id="contact" className="bg-neutral">
             <div className="footer p-10 text-neutral-content container mx-auto justify-between">
-                <div>
-                    <span className="footer-title">Services</span>
-                    <a href="/" className="link link-hover">Branding</a>
-                    <a href="/" className="link link-hover">Design</a>
-                    <a href="/" className="link link-hover">Marketing</a>
-                    <a href="/" className="link link-hover">Advertisement</a>
+                <div className="md:max-w-lg md:min-w-[33.33%]">
+                    <span className="footer-title text-xl">We</span>
+                    <p className="text-lg">
+                        Welcome to QazSmart! We are your go-to platform for affordable and captivating tours across the enchanting landscapes of Kazakhstan. Our mission is to provide you with unforgettable experiences, showcasing the hidden gems and must-see destinations of our country. Immerse yourself in the rich culture, awe-inspiring natural beauty, and vibrant traditions of this incredible country. Discover the wonders of Kazakhstan with QazSmart, where cheap doesn't mean compromising on quality.
+                    </p>
                 </div>
-                <div>
-                    <span className="footer-title">Company</span>
-                    <a href="/" className="link link-hover">About us</a>
-                    <a href="/" className="link link-hover">Contact</a>
-                    <a href="/" className="link link-hover">Jobs</a>
-                    <a href="/" className="link link-hover">Press kit</a>
-                </div>
-                <div>
-                    <span className="footer-title">Legal</span>
-                    <a href="/" className="link link-hover">Terms of use</a>
-                    <a href="/" className="link link-hover">Privacy policy</a>
-                    <a href="/" className="link link-hover">Cookie policy</a>
-                </div>
-                <div>
-                    <span className="footer-title">Newsletter</span>
-                    <div className="form-control w-80">
-                        <label className="label">
-                            <span className="label-text text-neutral-content">Enter your email address</span>
-                        </label>
-                        <div className="relative">
-                            <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
-                            <button className="btn absolute top-0 right-0 rounded-l-none bg-sky-300 font-medium">Subscribe</button>
+                <div className="md:min-w-[33.33%]">
+                    <span className="footer-title text-xl">Address</span>
+                    <div className="flex flex-col justify-center items-center gap-y-8">
+                        <div className="w-full flex justify-start items-center">
+                            <FontAwesomeIcon icon={faLocationDot} size="xl" className="mr-2" />
+                            <div className="text-lg">
+                                Kazakhstan, Almaty
+                            </div>
+                        </div>
+                        <div className="w-full flex justify-start items-center">
+                            <FontAwesomeIcon icon={faPhone} size="xl" className="mr-2" />
+                            <div className="text-lg">
+                                +7 727 322 33 62
+                            </div>
+                        </div>
+                        <div className="w-full flex justify-start items-center">
+                            <FontAwesomeIcon icon={faEnvelope} size="xl" className="mr-2" />
+                            <div className="text-lg">
+                                niyaztaye@gmail.com
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="container mx-auto footer items-center pl-10 md:pl-0 p-4 bg-neutral text-neutral-content justify-start md:justify-center">
-                <div className="items-center grid-flow-col">
-                    <a href="/" className="font-semibold text-2xl">QS</a>
-                    <p>Copyright © 2023 - All right reserved</p>
-                </div>
-                <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-                    <a href="/"> </a>
-                    <a href="/"> </a>
-                    <a href="/"> </a>
+                <div className="md:max-w-[33.33%]">
+                    <h2 className="font-semibold text-4xl">QazSmart</h2>
+                    <p className="text-lg mb-4">© All rights reserved</p>
+                    <div className="w-full flex justify-start items-center gap-x-6">
+                        <a href="https://t.me/yelsultan"><FontAwesomeIcon icon={faTelegram} className="text-3xl cursor-pointer" /></a>
+                        <a href="https://www.instagram.com/dsgrcls/"><FontAwesomeIcon icon={faInstagram} className="text-3xl cursor-pointer" /></a>
+                        <a href="https://www.tiktok.com/@yels667"><FontAwesomeIcon icon={faTiktok} className="text-2xl cursor-pointer" /></a>
+                    </div>
                 </div>
             </div>
         </footer >

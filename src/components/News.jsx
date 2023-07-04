@@ -1,7 +1,6 @@
 import backgroundImage from '../assets/imgs/kz.jpg';
 
 export default function New() {
-    console.log("The Kazakh Head of State signed the Law of the Republic of Kazakhstan introducing changes and additions to some legislative acts of the Republic of Kazakhstan regarding professional qualifications, state awards, social protection, and education, Kazinform cites Akorda".length);
     //Max title size 94 characters
     //Max text size
     return (

@@ -1,7 +1,9 @@
+import { Link } from 'react-scroll';
 import { faBars, faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
+
     return (
         <header className="max-w-[1536px] w-full top-0 left-[50%] translate-x-[-50%] absolute py-4  text-base-content">
             <div className="navbar bg-transparent">
@@ -9,10 +11,18 @@ const Header = () => {
                     <div href="/" className="font-semibold text-4xl sm:text-5xl">QS</div>
                 </div>
                 <ul className="menu menu-horizontal px-1 text-xl font-medium capitalize space-x-10 hidden lg:flex">
-                    <li><a href="/">Tours</a></li>
-                    <li><a href="/">Reviews</a></li>
-                    <li><a href="/">News</a></li>
-                    <li><a href="/">Contact</a></li>
+                    <li>
+                        <Link to="tours" smooth={true} duration={500}>tours</Link>
+                    </li>
+                    <li>
+                        <Link to="reviews" smooth={true} duration={500}>reviews</Link>
+                    </li>
+                    <li>
+                        <Link to="news" smooth={true} duration={500}>news</Link>
+                    </li>
+                    <li>
+                        <Link to="contact" smooth={true} duration={500}>contact</Link>
+                    </li>
                     <li>
                         <details className="dropdown">
                             <summary>
@@ -40,10 +50,18 @@ const Header = () => {
                     <div className="drawer-side z-[1]">
                         <label htmlFor="my-drawer" className="drawer-overlay"></label>
                         <ul className="menu py-12 px-6 w-80 h-full bg-base-200 text-xl font-medium capitalize space-y-4 flex-nowrap z-50">
-                            <li><a href="/">Tours</a></li>
-                            <li><a href="/">Reviews</a></li>
-                            <li><a href="/">News</a></li>
-                            <li><a href="/">Contact</a></li>
+                            <li>
+                                <Link to="tours" smooth={true} duration={500}>tours</Link>
+                            </li>
+                            <li>
+                                <Link to="reviews" smooth={true} duration={500}>reviews</Link>
+                            </li>
+                            <li>
+                                <Link to="news" smooth={true} duration={500}>news</Link>
+                            </li>
+                            <li>
+                                <Link to="contact" smooth={true} duration={500}>contact</Link>
+                            </li>
                             <li>
                                 <details className="dropdown">
                                     <summary>
