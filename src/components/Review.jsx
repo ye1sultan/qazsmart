@@ -1,46 +1,37 @@
 import backgroundImage from '../assets/imgs/kz.jpg';
+import StarRatings from 'react-rating-stars-component';
 
-export default function Review({ id }) {
+export default function Review({ name, country, stars, text }) {
     //max text size 350 characters
+    const starRating = {
+        value: stars, // rating value
+        edit: false, // disable editing functionality
+        color: 'rgb(100 116 139)',
+        activeColor: 'rgb(125 211 252)', // custom active color
+        isHalf: true
+    };
+
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl max-w-5xl py-6 mx-8">
-            <figure>
-                <img src={backgroundImage} alt="Album" className="mask mask-circle max-h-60" />
-            </figure>
-            <div className="card-body flex flex-col justify-center items-start">
-                <div className='w-full flex justify-between items-center'>
-                    <h2 className="card-title text-4xl">Amir Kazken</h2>
-                    <div className="rating rating-md rating-half mr-2 hidden sm:block">
-                        <input type="radio" className="rating-hidden cursor-default" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-1" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-2" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-1" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-2" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-1" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-2" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-1" disabled checked />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-2" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-1" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-2" disabled />
+        <div className='w-full flex justify-center items-center'>
+            <div className="card lg:card-side bg-base-100 shadow-xl max-w-5xl py-6 mx-8 my-12">
+                <figure>
+                    <img src={backgroundImage} alt="Album" className="mask mask-circle max-h-60" />
+                </figure>
+                <div className="card-body flex flex-col justify-center items-start">
+                    <div className='w-full flex justify-between items-center'>
+                        <h2 className="card-title text-3xl">{name}</h2>
+                        <div className="rating rating-md rating-half mr-2 hidden sm:block">
+                            <StarRatings {...starRating} size={30} />
+                        </div>
                     </div>
-                </div>
-                <div className='w-full flex justify-between items-center'>
-                    <h1 className="text-xl text-slate-500">Austria</h1>
-                    <div className="rating rating-sm rating-half block sm:hidden">
-                        <input type="radio" className="rating-hidden cursor-default" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-1" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-2" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-1" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-2" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-1" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-2" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-1" checked disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-2" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-1" disabled />
-                        <input type="radio" className="bg-sky-300 cursor-default mask mask-star-2 mask-half-2" disabled />
+                    <div className='w-full flex justify-between items-center'>
+                        <h1 className="text-xl text-slate-500">{country}</h1>
+                        <div className="rating rating-sm rating-half block sm:hidden ">
+                            <StarRatings {...starRating} size={18} />
+                        </div>
                     </div>
+                    <p className="flex-grow-0 max-w-[500px] w-full text-lg">{text}</p>
                 </div>
-                <p className="flex-grow-0 max-w-[500px] w-full text-lg">"We started in Almaty in Kazakhstan. We had various guides and drivers at different stages. The constant was Yels and Yels. They maintained contact with us to make sure everything was going to plan. Elena developed a tour to suit our needs including time to get visas. The price was great value for money."</p>
             </div>
         </div>
     );

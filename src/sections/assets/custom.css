@@ -1,0 +1,15 @@
+/* Change the size and color of the unselected dots */
+.slick-dots li button:before {
+    font-size: 12px;
+    /* change size */
+    color: rgb(100 116 139);
+    /* change color */
+}
+
+/* Change the size and color of the selected dot */
+.slick-dots li.slick-active button:before {
+    font-size: 16px;
+    /* change size */
+    color: rgb(125 211 252);
+    /* change color */
+}

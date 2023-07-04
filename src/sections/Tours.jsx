@@ -56,7 +56,7 @@ const Tours = () => {
                             <button className="btn w-56 sm:btn-wide btn-md lg:btn-lg bg-sky-300 font-medium">all tours</button>
                         </div>
                     </>
-                ) : <div></div>
+                ) : <div className="w-full flex justify-center items-center text-2xl">New tours soon...</div>
             }
         </div >
     );
