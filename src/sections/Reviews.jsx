@@ -48,8 +48,9 @@ const Reviews = () => {
 
     const settings = {
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 500,
+        autoplay: true,
         slidesToShow: 1,
         slidesToScroll: 1,
     };
@@ -60,7 +61,7 @@ const Reviews = () => {
             {loading ? <div className="w-full flex justify-center items-center"><span className="loading loading-spinner loading-lg"></span></div> : data.length > 0 ?
                 (
                     <Slider {...settings}>
-                        {data.map((review, index) =>
+                        {data.slice(0, 6).map((review, index) =>
                             <Review key={index} name={review.name} country={review.country} stars={review.stars} text={review.text} />
                         )}
                     </Slider>
