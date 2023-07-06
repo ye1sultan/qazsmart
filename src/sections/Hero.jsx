@@ -1,6 +1,7 @@
 import { Link } from 'react-scroll';
 import Wave from 'react-wavify';
 import backgroundImage from '../assets/imgs/kz.jpg';
+import Header from './Header';
 
 const Hero = () => {
     const backgroundStyle = {
@@ -10,7 +11,7 @@ const Hero = () => {
     };
 
     return (
-        <>
+        <div className='w-full relative'>
             <div className="w-full h-screen bg-cover" style={backgroundStyle}>
                 <div className="container mx-auto hero h-screen justify-start">
                     <div className="hero-content text-start text-neutral-content">
@@ -34,7 +35,8 @@ const Hero = () => {
                     }}
                 />
             </div>
-        </>
+            <Header />
+        </div>
     );
 }
 

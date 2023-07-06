@@ -39,7 +39,7 @@ const Header = () => {
                     </li>
                 </ul>
 
-                <div className="drawer block lg:hidden flex-[0]">
+                <div className="drawer block lg:hidden flex-[0] z-[9999]">
                     <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content">
                         <label htmlFor="my-drawer" className="btn btn-ghost drawer-button">
@@ -48,7 +48,7 @@ const Header = () => {
                     </div>
                     <div className="drawer-side z-[1]">
                         <label htmlFor="my-drawer" className="drawer-overlay"></label>
-                        <ul className="menu py-12 px-6 w-80 h-full bg-base-200 text-xl font-medium capitalize space-y-4 flex-nowrap z-50">
+                        <ul className="menu py-12 px-6 w-80 h-full text-xl font-medium capitalize space-y-4 flex-nowrap bg-[#f9f8fd]">
                             <li>
                                 <Link to="tours" smooth={true} duration={500}>tours</Link>
                             </li>
