@@ -3,7 +3,6 @@ import { faBars, faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
-
     return (
         <header className="max-w-[1536px] w-full top-0 left-[50%] translate-x-[-50%] absolute py-4  text-base-content">
             <div className="navbar bg-transparent">

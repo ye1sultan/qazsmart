@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll';
-import Header from './Header';
+import Wave from 'react-wavify';
 import backgroundImage from '../assets/imgs/kz.jpg';
 
 const Hero = () => {
@@ -22,7 +22,18 @@ const Hero = () => {
                     </div>
                 </div>
             </div >
-            <Header />
+            {/* f9f8fd */}
+            <div className='w-full absolute bottom-[-7px] left-0 z-50'>
+                <Wave fill='#f9f8fd'
+                    paused={false}
+                    options={{
+                        height: 20,
+                        amplitude: 40,
+                        speed: 0.15,
+                        points: 4
+                    }}
+                />
+            </div>
         </>
     );
 }
