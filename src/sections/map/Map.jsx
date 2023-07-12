@@ -4,21 +4,24 @@ export default function Map() {
     const classNames = "hover:fill-[#FFEDC1] transition-colors duration-100 ease-in-out";
 
     const svgRef = useRef();
-    const [circles, setCircles] = useState([]);
+    // const [circles, setCircles] = useState([]);
 
-    const handleClick = (event) => {
-        const svg = svgRef.current;
-        const point = svg.createSVGPoint();
-        point.x = event.clientX;
-        point.y = event.clientY;
-        const { x, y } = point.matrixTransform(svg.getScreenCTM().inverse());
-        setCircles([...circles, { x, y }]);
-    };
+    // const handleClick = (event) => {
+    //     const svg = svgRef.current;
+    //     const point = svg.createSVGPoint();
+    //     point.x = event.clientX;
+    //     point.y = event.clientY;
+    //     const { x, y } = point.matrixTransform(svg.getScreenCTM().inverse());
+    //     setCircles([...circles, { x, y }]);
+    //     console.log(x, y);
+    // };
+
+    //957, 585 Almaty
+    //772, 218 Astana
 
     return (
         <svg
             ref={svgRef}
-            onClick={handleClick}
             className="max-w-full h-auto" width="1291" height="709" viewBox="0 0 1291 709" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_1_2)">
                 <mask id="path-1-outside-1_1_2" maskUnits="userSpaceOnUse" x="595.73" y="93.2386" width="284" height="193" fill="black">
@@ -117,9 +120,15 @@ export default function Map() {
                     <rect width="1291" height="709" fill="white" />
                 </clipPath>
             </defs>
-            {circles.map((circle, index) => (
+            {/* {circles.map((circle, index) => (
                 <circle key={index} cx={circle.x} cy={circle.y} r="10" fill="rgb(125 211 252)" />
-            ))}
+            ))} */}
+            {/* Almaty */}
+            <circle cx={957} cy={580} r="10" fill="rgb(125 211 252)" />
+            <text x="975" y="587" fontSize={32} fill="black">Almaty</text>
+            {/* Astana */}
+            <circle cx={765} cy={218} r="10" fill="rgb(125 211 252)" />
+            <text x="783" y="225" fontSize={32} fill="black">Astana</text>
         </svg>
     );
 }

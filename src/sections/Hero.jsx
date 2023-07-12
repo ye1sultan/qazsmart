@@ -25,7 +25,7 @@ const Hero = () => {
             </div >
             {/* f9f8fd */}
             <div className='w-full absolute bottom-[-7px] left-0 z-50'>
-                <Wave fill='#f9f8fd'
+                <Wave fill='#fff'
                     paused={false}
                     options={{
                         height: 20,

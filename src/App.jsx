@@ -7,7 +7,7 @@ import MapContainer from "./sections/map/MapContainer";
 
 const App = () => {
 	return (
-		<div className="w-full overflow-x-hidden bg-[#f9f8fd]">
+		<div className="w-full overflow-x-hidden bg-[#fff]">
 			<Hero />
 			<MapContainer />
 			<Tours />
