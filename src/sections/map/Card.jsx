@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import backgroundImage from '../../assets/imgs/kz.jpg';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export default function Card({ name, description, photo, setCard }) {

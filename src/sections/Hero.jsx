@@ -18,7 +18,7 @@ const Hero = () => {
                         <div className="max-w-xl">
                             <p className="mb-5 text-xl md:text-2xl lg:text-2xl xl:text-3xl italic">Explore today!</p>
                             <h1 className="mb-5 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">Welcome to Kazakhstan</h1>
-                            <Link className="btn btn-sm md:btn-md lg:btn-lg" to="tours" smooth={true} duration={500}>Get Started</Link>
+                            <Link className="btn btn-sm md:btn-md lg:btn-lg" to="map" smooth={true} duration={500}>Get Started</Link>
                         </div>
                     </div>
                 </div>

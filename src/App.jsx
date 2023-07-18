@@ -4,6 +4,7 @@ import Reviews from "./sections/Reviews";
 import Footer from "./sections/Footer";
 import News from "./sections/News";
 import MapContainer from "./sections/map/MapContainer";
+import AllTours from "./sections/tours/AllTours";
 
 const App = () => {
 	return (
@@ -14,6 +15,7 @@ const App = () => {
 			<Reviews />
 			<News />
 			<Footer />
+			{/* <AllTours /> */}
 		</div>
 	);
 }
