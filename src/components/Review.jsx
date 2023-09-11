@@ -1,5 +1,5 @@
 import backgroundImage from '../assets/imgs/kz.jpg';
-import StarRatings from 'react-rating-stars-component';
+// import StarRatings from 'react-rating-stars-component';
 
 export default function Review({ name, country, stars, text }) {
     //max text size 350 characters
@@ -21,13 +21,13 @@ export default function Review({ name, country, stars, text }) {
                     <div className='w-full flex justify-between items-center'>
                         <h2 className="card-title text-3xl">{name}</h2>
                         <div className="rating rating-md rating-half mr-2 hidden sm:block">
-                            <StarRatings {...starRating} size={30} />
+                            {/* <StarRatings {...starRating} size={30} /> */}
                         </div>
                     </div>
                     <div className='w-full flex justify-between items-center'>
                         <h1 className="text-xl text-slate-500">{country}</h1>
                         <div className="rating rating-sm rating-half block sm:hidden ">
-                            <StarRatings {...starRating} size={18} />
+                            {/* <StarRatings {...starRating} size={18} /> */}
                         </div>
                     </div>
                     <p className="flex-grow-0 max-w-[500px] w-full text-lg">{text}</p>

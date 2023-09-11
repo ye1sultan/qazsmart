@@ -1,87 +1,111 @@
-import { Link } from 'react-scroll';
-import { faBars, faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Fragment, useEffect } from 'react';
+import { Popover, Transition } from '@headlessui/react';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+export default function Header() {
+    // const handleScroll = () => {
+    //     const scrollY = window.scrollY;
+    //     const header = document.getElementById('header');
+    //     const navTexts = document.getElementsByClassName('navtexts');
+
+    //     if (scrollY > 0) {
+    //         header.classList.add('bg-gray-900');
+    //         header.classList.add('bg-opacity-50');
+    //         header.classList.remove('bg-transparent');
+
+    //     } else {
+    //         header.classList.remove('bg-gray-900');
+    //         header.classList.remove('bg-opacity-50');
+    //         header.classList.add('bg-transparent');
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
+
     return (
-        <header className="max-w-[1536px] w-full top-0 left-[50%] translate-x-[-50%] absolute py-4  text-base-content">
-            <div className="navbar bg-transparent">
-                <div className="flex-1">
-                    <div href="/" className="font-semibold text-4xl sm:text-5xl">QS</div>
+        <Popover className="relative">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center md:justify-start md:space-x-10">
+                <div className="flex justify-start lg:w-0 flex-1">
+                    <Link className='text-3xl font-semibold text-white navtexts'>
+                        <span className="sr-only">QazSmart</span>
+                        QS
+                    </Link>
                 </div>
-                <ul className="menu menu-horizontal px-1 text-xl font-medium capitalize space-x-10 hidden lg:flex">
-                    <li>
-                        <Link to="tours" smooth={true} duration={500}>tours</Link>
-                    </li>
-                    <li>
-                        <Link to="reviews" smooth={true} duration={500}>reviews</Link>
-                    </li>
-                    <li>
-                        <Link to="news" smooth={true} duration={500}>news</Link>
-                    </li>
-                    <li>
-                        <Link to="contact" smooth={true} duration={500}>contact</Link>
-                    </li>
-                    <li>
-                        <details className="dropdown">
-                            <summary>
-                                <FontAwesomeIcon icon={faEarthAmericas} size='sm' />
-                            </summary>
-                            <ul className="shadow menu dropdown-content z-[1] bg-base-100 rounded-box text-lg">
-                                <li className="btn btn-ghost flex flex-row justify-start">
-                                    English
-                                </li>
-                                <li className="btn btn-ghost flex flex-row justify-start">
-                                    Русский
-                                </li>
-                            </ul>
-                        </details>
-                    </li>
-                </ul>
-
-                <div className="drawer block lg:hidden flex-[0] z-[9999]">
-                    <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-                    <div className="drawer-content">
-                        <label htmlFor="my-drawer" className="btn btn-ghost drawer-button">
-                            <FontAwesomeIcon icon={faBars} size='xl' />
-                        </label>
-                    </div>
-                    <div className="drawer-side z-[1]">
-                        <label htmlFor="my-drawer" className="drawer-overlay"></label>
-                        <ul className="menu py-12 px-6 w-80 h-full text-xl font-medium capitalize space-y-4 flex-nowrap bg-[#f9f8fd]">
-                            <li>
-                                <Link to="tours" smooth={true} duration={500}>tours</Link>
-                            </li>
-                            <li>
-                                <Link to="reviews" smooth={true} duration={500}>reviews</Link>
-                            </li>
-                            <li>
-                                <Link to="news" smooth={true} duration={500}>news</Link>
-                            </li>
-                            <li>
-                                <Link to="contact" smooth={true} duration={500}>contact</Link>
-                            </li>
-                            <li>
-                                <details className="dropdown">
-                                    <summary>
-                                        <FontAwesomeIcon icon={faEarthAmericas} size='sm' />
-                                    </summary>
-                                    <ul className="w-full translate-x-0 shadow menu dropdown-content z-[1] bg-base-100 rounded-box text-lg ml-0">
-                                        <li className="btn btn-ghost flex flex-row justify-start">
-                                            English
-                                        </li>
-                                        <li className="btn btn-ghost flex flex-row justify-start">
-                                            Русский
-                                        </li>
-                                    </ul>
-                                </details>
-                            </li>
-                        </ul>
-                    </div>
+                <div className="-mr-2 -my-2 md:hidden">
+                    <Popover.Button className="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <span className="sr-only">Open menu</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </Popover.Button>
                 </div>
+                <nav className="hidden md:flex space-x-16 capitalize">
+                    <Link className="text-base font-medium text-white hover:text-gray-300 navtexts">
+                        tours
+                    </Link>
+                    <Link className="text-base font-medium text-white hover:text-gray-300 navtexts">
+                        reviews
+                    </Link>
+                    <Link className="text-base font-medium text-white hover:text-gray-300 navtexts">
+                        favourites
+                    </Link>
+                    <Link className="text-base font-medium text-white hover:text-gray-300 navtexts">
+                        contact
+                    </Link>
+                </nav>
             </div>
-        </header>
+
+            <Transition
+                as={Fragment}
+                enter="duration-200 ease-out"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="duration-100 ease-in"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+            >
+                <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+                    <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                        <div className="pt-5 pb-6 px-5">
+                            <div className="flex items-center justify-between">
+                                <Link className='text-3xl font-medium text-gray-900'>
+                                    <span className="sr-only">QazSmart</span>
+                                    QS
+                                </Link>
+                                <div className="-mr-2">
+                                    <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                        <span className="sr-only">Close menu</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </Popover.Button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="py-6 px-5">
+                            <div className="grid grid-cols-2 gap-4 capitalize">
+                                <Link className="text-base font-medium text-gray-900 hover:text-gray-700">
+                                    tours
+                                </Link>
+                                <Link className="text-base font-medium text-gray-900 hover:text-gray-700">
+                                    reviews
+                                </Link>
+                                <Link className="text-base font-medium text-gray-900 hover:text-gray-700">
+                                    favourites
+                                </Link>
+                                <Link className="text-base font-medium text-gray-900 hover:text-gray-700">
+                                    contact
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </Popover.Panel>
+            </Transition>
+        </Popover>
     );
 }
-
-export default Header;

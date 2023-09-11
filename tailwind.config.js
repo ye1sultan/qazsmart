@@ -5,14 +5,12 @@ module.exports = {
 	],
 	theme: {
 		fontFamily: {
-			sans: ['Outfit', 'sans-serif'],
+			mont: ['Montserrat', 'sans-serif'],
 		},
 	},
 	plugins: [
-		require("daisyui"),
-		require('@tailwindcss/line-clamp')
-	],
-	daisyui: {
-		themes: false,
-	},
+		require('@tailwindcss/line-clamp'),
+		require('@tailwindcss/forms'),
+		require('@tailwindcss/typography')
+	]
 }

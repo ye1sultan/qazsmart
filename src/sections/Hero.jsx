@@ -1,42 +1,47 @@
-import { Link } from 'react-scroll';
-import Wave from 'react-wavify';
+import { Link } from "react-router-dom";
 import backgroundImage from '../assets/imgs/kz.jpg';
-import Header from './Header';
+import Header from "./Header";
 
 const Hero = () => {
-    const backgroundStyle = {
+    const heroStyle = {
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center center',
+    };
+
+    const overlayStyle = {
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
     };
 
     return (
-        <div className='w-full relative'>
-            <div className="w-full h-screen bg-cover" style={backgroundStyle}>
-                <div className="container mx-auto hero h-screen justify-start">
-                    <div className="hero-content text-start text-neutral-content">
-                        <div className="max-w-xl">
-                            <p className="mb-5 text-xl md:text-2xl lg:text-2xl xl:text-3xl italic">Explore today!</p>
-                            <h1 className="mb-5 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">Welcome to Kazakhstan</h1>
-                            <Link className="btn btn-sm md:btn-md lg:btn-lg" to="map" smooth={true} duration={500}>Get Started</Link>
+        <>
+            <div id="header" className="w-full absolute z-50 transition-all duration-200 ease-linear">
+                <Header />
+            </div>
+            <div className="w-full h-screen relative z-10" style={heroStyle}>
+                <div style={overlayStyle}></div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-start items-center relative z-10">
+                    <div className="max-w-2xl w-full px-6 lg:px-8">
+                        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                            Discover the Beauty of Kazakhstan
+                        </h1>
+                        <p className="mt-6 text-lg leading-8 text-gray-300">
+                            Immerse Yourself in the Rich Culture and Scenic Landscapes of Kazakhstan
+                        </p>
+                        <div className="mt-10 flex items-center justify-start gap-x-6">
+                            <Link className="rounded-md bg-sky-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500">
+                                Start Your Journey
+                            </Link>
                         </div>
                     </div>
                 </div>
-            </div >
-            {/* f9f8fd */}
-            <div className='w-full absolute bottom-[-7px] left-0 z-50'>
-                <Wave fill='#fff'
-                    paused={false}
-                    options={{
-                        height: 20,
-                        amplitude: 40,
-                        speed: 0.15,
-                        points: 4
-                    }}
-                />
             </div>
-            <Header />
-        </div>
+        </>
     );
 }
 

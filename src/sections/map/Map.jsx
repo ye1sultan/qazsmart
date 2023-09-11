@@ -18,6 +18,7 @@ export default function Map() {
         { name: 'West Kazakhstan', description: 'West Kazakhstan is famous for its breathtaking sunsets and panoramic views of the Caspian Sea.', photo: '/images/region13.jpg' },
         { name: 'Zhambyl', description: 'Zhambyl is renowned for its orchards, producing a variety of fruits that are enjoyed throughout the nation.', photo: '/images/region14.jpg' },
         { name: 'Aral sea', description: 'Once one of the world\'s largest lakes, the Aral Sea is a sobering reminder of the environmental cost of mismanaged resources.', photo: '/images/region15.jpg' },
+        { name: 'Astana', description: 'Astana is the capital city of Kazakhstan. It is a city of modernity and futuristic architecture, often referred to as the "City of the Future." With its stunning skyscrapers, state-of-the-art infrastructure, and grand boulevards, Nur-Sultan is a symbol of Kazakhstan`s ambitious growth and development.Explore the iconic Baiterek Tower, visit the Palace of Peace and Reconciliation, and immerse yourself in the vibrant cultural scene of the capital.', photo: '/images/Astana.jpg' },
     ];
 
     const svgRef = useRef();
@@ -29,16 +30,14 @@ export default function Map() {
     const [showCard, setShowCard] = useState(false);
 
     const handleClick = (region) => (event) => {
-        // Get the clicked position relative to the SVG element
         const point = svgRef.current.createSVGPoint();
         point.x = event.clientX;
         point.y = event.clientY;
         const { x, y } = point.matrixTransform(svgRef.current.getScreenCTM().inverse());
 
-        // Set the state with the clicked region and its position
         setSelectedRegion(region);
         setCardPosition({ x, y });
-        setShowCard(true);  // Show the card
+        setShowCard(true);
     };
 
     const renderCard = () => {
@@ -46,7 +45,6 @@ export default function Map() {
             return null;
         }
 
-        // The position of the card
         const cardStyle = {
             position: 'absolute',
             left: `${cardPosition.x}px`,
@@ -189,13 +187,13 @@ export default function Map() {
                 ))} */}
 
                 {/* Almaty */}
-                <g className="cursor-pointer">
+                <g onClick={handleClick(regions[2])} className="cursor-pointer">
                     <circle cx={957} cy={580} r="12" fill="#F59E0B" />
                     <text x="975" y="590" fontSize={32} fill="black" className="hover:fill-slate-500">Almaty</text>
                 </g>
 
                 {/* Astana */}
-                <g className="cursor-pointer">
+                <g onClick={handleClick(regions[15])} className="cursor-pointer">
                     <circle cx={765} cy={218} r="12" fill="#F59E0B" />
                     <text x="783" y="228" fontSize={32} fill="black" className="hover:fill-slate-500">Astana</text>
                 </g>
