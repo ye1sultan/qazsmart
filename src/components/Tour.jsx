@@ -1,6 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const formatDate = (dateString) => {
+    const parts = dateString.split('-');
+
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const monthIndex = parseInt(parts[1]) - 1;
+    const formattedMonth = months[monthIndex];
+    const formattedDate = `${parts[0]} ${formattedMonth} 20${parts[2]}`;
+
+    return formattedDate;
+}
+
 export default function Tour({ name, text, date, cost }) {
     const [like, setLike] = useState(false);
 
@@ -8,25 +19,10 @@ export default function Tour({ name, text, date, cost }) {
         setLike(!like);
     }
 
-    const formatDate = (dateString) => {
-        // Split the input date string into an array of parts
-        const parts = dateString.split('-');
-
-        // Convert the month part (parts[1]) to its full name
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        const monthIndex = parseInt(parts[1]) - 1; // Subtract 1 as months are zero-based
-        const formattedMonth = months[monthIndex];
-
-        // Create the formatted date string
-        const formattedDate = `${parts[0]} ${formattedMonth} 20${parts[2]}`;
-
-        return formattedDate;
-    }
-
     return (
-        <div className="group relative w-[280px] min-h-[400px]">
+        <div className="group relative w-[280px] min-h-[400px] rounded-xl border border-gray-200 shadow-lg">
             <div className="relative">
-                <div className="relative w-full h-56 rounded-lg overflow-hidden">
+                <div className="relative w-full h-56 rounded-tl-lg rounded-tr-lg overflow-hidden">
                     <img
                         src="https://picsum.photos/2000/1000"
                         alt="Region"
@@ -34,10 +30,10 @@ export default function Tour({ name, text, date, cost }) {
                     />
                 </div>
                 <div className="relative mt-4 px-4">
-                    <h3 className="text-lg font-medium text-gray-900 capitalize">{name}</h3>
+                    <h3 className="text-lg font-medium text-gray-900 capitalize whitespace-nowrap truncate">{name}</h3>
                     <p className='line-clamp-3 text-sm mt-2 text-gray-600'>{text}</p>
                 </div>
-                <div className="absolute top-0 inset-x-0 h-56 rounded-lg p-4 flex items-end justify-end overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-56 rounded-tl-lg rounded-tr-lg p-4 flex items-end justify-end overflow-hidden">
                     <div
                         aria-hidden="true"
                         className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black opacity-50"
@@ -48,7 +44,7 @@ export default function Tour({ name, text, date, cost }) {
                     </div>
                 </div>
             </div>
-            <div className='w-full flex items-center justify-between mt-6 pl-4'>
+            <div className='w-full flex items-center justify-between my-5 px-4'>
                 {!like ? (
                     <svg onClick={() => handleLike()} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 cursor-pointer">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />

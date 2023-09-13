@@ -64,51 +64,15 @@ const Footer = () => {
     ];
 
     return (
-        // <footer id="contact" className="bg-neutral">
-        //     <div className="footer p-10 text-neutral-content container mx-auto justify-between">
-        //         <div className="md:max-w-lg md:min-w-[33.33%]">
-        //             <span className="footer-title text-xl">We</span>
-        //             <p className="text-lg">
-        //                 Welcome to QazSmart! We are your go-to platform for affordable and captivating tours across the enchanting landscapes of Kazakhstan. Our mission is to provide you with unforgettable experiences, showcasing the hidden gems and must-see destinations of our country. Immerse yourself in the rich culture, awe-inspiring natural beauty, and vibrant traditions of this incredible country. Discover the wonders of Kazakhstan with QazSmart, where cheap doesn't mean compromising on quality.
-        //             </p>
-        //         </div>
-        //         <div className="md:min-w-[33.33%]">
-        //             <span className="footer-title text-xl">Address</span>
-        //             <div className="flex flex-col justify-center items-center gap-y-8">
-        //                 <div className="w-full flex justify-start items-center">
-        //                     {/* <FontAwesomeIcon icon={faLocationDot} size="xl" className="mr-2" /> */}
-        //                     <div className="text-lg">
-        //                         Kazakhstan, Almaty
-        //                     </div>
-        //                 </div>
-        //                 <div className="w-full flex justify-start items-center">
-        //                     {/* <FontAwesomeIcon icon={faPhone} size="xl" className="mr-2" /> */}
-        //                     <div className="text-lg">
-        //                         +7 727 322 33 62
-        //                     </div>
-        //                 </div>
-        //                 <div className="w-full flex justify-start items-center">
-        //                     {/* <FontAwesomeIcon icon={faEnvelope} size="xl" className="mr-2" /> */}
-        //                     <div className="text-lg">
-        //                         niyaztaye@gmail.com
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //         <div className="md:max-w-[33.33%]">
-        //             <h2 className="font-semibold text-4xl">QazSmart</h2>
-        //             <p className="text-lg mb-4">© All rights reserved</p>
-        //             <div className="w-full flex justify-start items-center gap-x-6">
-        //                 {/* <a href="https://t.me/yelsultan"><FontAwesomeIcon icon={faTelegram} className="text-3xl cursor-pointer" /></a>
-        //                 <a href="https://www.instagram.com/dsgrcls/"><FontAwesomeIcon icon={faInstagram} className="text-3xl cursor-pointer" /></a>
-        //                 <a href="https://www.tiktok.com/@yels667"><FontAwesomeIcon icon={faTiktok} className="text-2xl cursor-pointer" /></a> */}
-        //             </div>
-        //         </div>
-        //     </div>
-        // </footer >
-        <footer className="bg-white border-t border-gray-300">
+        <footer id="footer" className="bg-gray-100 border-t border-gray-300">
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
-                <div className="flex justify-center space-x-6 md:order-2">
+                <div className="flex justify-center flex-wrap space-x-6 md:order-2 capitalize">
+                    <span className="text-gray-500 flex justify-center items-center gap-x-2">
+                        contact us
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                        </svg>
+                    </span>
                     {navigation.map((item) => (
                         <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
                             <span className="sr-only">{item.name}</span>
@@ -117,7 +81,7 @@ const Footer = () => {
                     ))}
                 </div>
                 <div className="mt-8 md:mt-0 md:order-1">
-                    <p className="text-center text-base text-gray-400">&copy; 2023 QazSmart, Inc. All rights reserved.</p>
+                    <p className="text-center text-base text-gray-500">&copy; 2023 QazSmart, Inc. All rights reserved.</p>
                 </div>
             </div>
         </footer>

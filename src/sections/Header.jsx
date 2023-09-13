@@ -1,31 +1,8 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
-    // const handleScroll = () => {
-    //     const scrollY = window.scrollY;
-    //     const header = document.getElementById('header');
-    //     const navTexts = document.getElementsByClassName('navtexts');
-
-    //     if (scrollY > 0) {
-    //         header.classList.add('bg-gray-900');
-    //         header.classList.add('bg-opacity-50');
-    //         header.classList.remove('bg-transparent');
-
-    //     } else {
-    //         header.classList.remove('bg-gray-900');
-    //         header.classList.remove('bg-opacity-50');
-    //         header.classList.add('bg-transparent');
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
 
     return (
         <Popover className="relative">
@@ -45,18 +22,18 @@ export default function Header() {
                     </Popover.Button>
                 </div>
                 <nav className="hidden md:flex space-x-16 capitalize">
-                    <Link className="text-base font-medium text-white hover:text-gray-300 navtexts">
+                    <a href="/#tours" className="text-base font-medium text-white hover:text-gray-300 navtexts">
                         tours
-                    </Link>
-                    <Link className="text-base font-medium text-white hover:text-gray-300 navtexts">
+                    </a>
+                    <a href="/#reviews" className="text-base font-medium text-white hover:text-gray-300 navtexts">
                         reviews
-                    </Link>
+                    </a>
                     <Link className="text-base font-medium text-white hover:text-gray-300 navtexts">
                         favourites
                     </Link>
-                    <Link className="text-base font-medium text-white hover:text-gray-300 navtexts">
+                    <a href="/#footer" className="text-base font-medium text-white hover:text-gray-300 navtexts">
                         contact
-                    </Link>
+                    </a>
                 </nav>
             </div>
 
@@ -89,18 +66,18 @@ export default function Header() {
                         </div>
                         <div className="py-6 px-5">
                             <div className="grid grid-cols-2 gap-4 capitalize">
-                                <Link className="text-base font-medium text-gray-900 hover:text-gray-700">
+                                <a href="/#tours" className="text-base font-medium text-gray-900 hover:text-gray-700">
                                     tours
-                                </Link>
-                                <Link className="text-base font-medium text-gray-900 hover:text-gray-700">
+                                </a>
+                                <a href="/#reviews" className="text-base font-medium text-gray-900 hover:text-gray-700">
                                     reviews
-                                </Link>
-                                <Link className="text-base font-medium text-gray-900 hover:text-gray-700">
+                                </a>
+                                <a href="/" className="text-base font-medium text-gray-900 hover:text-gray-700">
                                     favourites
-                                </Link>
-                                <Link className="text-base font-medium text-gray-900 hover:text-gray-700">
+                                </a>
+                                <a href="/#footer" className="text-base font-medium text-gray-900 hover:text-gray-700">
                                     contact
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>
