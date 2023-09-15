@@ -24,7 +24,7 @@ const AllTours = ({ data }) => {
             <div className={`container mx-auto flex flex-col justify-start items-start py-8 flex-grow ${data ? "gap-y-12 sm:gap-y-14" : "gap-y-0"}`}>
                 <ToursTitle name={"All tours"} />
                 {data && data.length > 0 ? (
-                    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hidden md:flex justify-center items-center flex-wrap gap-y-10 gap-x-20">
+                    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center flex-wrap gap-y-10 gap-x-20">
                         {data.map(tour =>
                             <Tour
                                 key={tour.id}
