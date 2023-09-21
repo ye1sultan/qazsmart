@@ -1,5 +1,6 @@
 import { GoogleMap, InfoWindowF, MarkerF, useLoadScript } from "@react-google-maps/api";
 import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Map({ coord }) {
     const { isLoaded } = useLoadScript({
@@ -22,6 +23,9 @@ const Tooltip = ({ text }) => {
 }
 
 const GMap = ({ coord }) => {
+    const { i18n } = useTranslation();
+    const selectedLanguage = i18n.language;
+
     const kazakhstan = useMemo(() => ({ lat: 48.0196, lng: 66.9237 }), []);
     const [selectedLocation, setSelectedLocation] = useState(null);
     const [map, setMap] = useState(null);
@@ -70,7 +74,7 @@ const GMap = ({ coord }) => {
                     position={{ lat: selectedLocation.coordinates.lat, lng: selectedLocation.coordinates.lng }}
                     onCloseClick={() => setSelectedLocation(null)}
                 >
-                    <Tooltip text={selectedLocation.name} />
+                    <Tooltip text={selectedLocation.name[selectedLanguage]} />
                 </InfoWindowF>
             )}
         </GoogleMap>
