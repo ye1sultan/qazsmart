@@ -16,7 +16,12 @@
         "buttonText": "All Activities"
     },
     "reviews": {
-        "title": "Reviews"
+        "title": "Reviews",
+        "basedOn": "Based on",
+        "reviews": "reviews",
+        "thoughtsText": "Share your thoughts",
+        "thoughtsSubText": "If you've tried our tours or activities in Kazakhstan, share your thoughts with fellow travelers!",
+        "btnText": "Write a review"
     },
     "footer": {
         "contactUsText": "Contact Us",
@@ -29,5 +34,19 @@
         "price": "Price",
         "date": "Date",
         "weather": "Weather"
-    }
+    },
+    "months": {
+        "1": "January",
+        "2": "February",
+        "3": "March",
+        "4": "April",
+        "5": "May",
+        "6": "June",
+        "7": "July",
+        "8": "August",
+        "9": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December"
+      }
 }

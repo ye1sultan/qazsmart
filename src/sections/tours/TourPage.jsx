@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-import backgroundImage from '../../assets/imgs/headers.jpg';
+import backgroundImage from '../assets/imgs/headers.jpg';
 import axios from "../../axios";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import PageMap from "../../components/PageMap";
-import TourInfo from "../../components/TourInfo";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import PageMap from "../components/PageMap";
+import TourInfo from "../components/TourInfo";
 
 const TourPage = () => {
     const { t, i18n } = useTranslation();

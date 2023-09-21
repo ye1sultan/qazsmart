@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Empty from "../../../../components/Empty";
+import Empty from "../components/Empty";
 import { fetchActivities } from "../../../../redux/slices/activities";
 import SideBar from "../../SideBar";
 import Title from "../components/Title";

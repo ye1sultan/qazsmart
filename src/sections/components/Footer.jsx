@@ -65,7 +65,7 @@ const Footer = () => {
         <>
             <footer id="footer" className="relative z-10" style={footerStyle}>
                 <div className="absolute inset-0 bg-gradient-to-b from-white" />
-                <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8 z-10 relative">
+                <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8 z-10 relative">
                     <div className="flex justify-center flex-wrap space-x-6 md:order-2 capitalize">
                         <span className="font-medium text-gray-900 flex justify-center items-center gap-x-2">
                             {t("footer.contactUsText")}

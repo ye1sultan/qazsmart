@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import Activity from "../components/Activity";
-import Empty from "../components/Empty";
-import Title from "../components/Title";
+import Activity from "./components/Activity";
+import Empty from "./components/Empty";
+import Title from "./components/Title";
 
 const Activities = ({ activities }) => {
     const { t, i18n } = useTranslation();

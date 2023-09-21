@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import backgroundImage from '../assets/imgs/headers.jpg';
-import Activity from "../components/Activity";
-import Empty from "../components/Empty";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import ToursTitle from "../components/ToursTitle";
+import backgroundImage from './assets/imgs/header-sm.jpg';
+import Activity from "./components/Activity";
+import Empty from "./components/Empty";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import ToursTitle from "./components/ToursTitle";
 import { fetchActivities } from "../redux/slices/activities";
 import { useTranslation } from "react-i18next";
 

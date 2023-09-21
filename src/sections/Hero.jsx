@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import backgroundImage from '../assets/imgs/kz.jpg';
-import Header from "../components/Header";
+import backgroundImage from './assets/imgs/kz.jpg';
+import Header from "./components/Header";
 
 const Hero = () => {
     const { t } = useTranslation();
