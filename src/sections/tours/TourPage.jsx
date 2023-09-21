@@ -1,14 +1,58 @@
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-import Header from "../Header";
 import backgroundImage from '../../assets/imgs/headers.jpg';
-import Footer from "../Footer";
+import axios from "../../axios";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import PageMap from "../../components/PageMap";
 import TourInfo from "../../components/TourInfo";
 
-const TourPage = ({ data }) => {
-    const { combinedTourInfo } = useParams();
-    const [name, id] = combinedTourInfo.split('$');
+const TourPage = () => {
+    const { t, i18n } = useTranslation();
+    const [data, setData] = useState();
+    const [isLoading, setIsLoading] = useState(true);
+    const { id } = useParams();
 
-    document.title = `QazSmart - ${name.toUpperCase()}`;
+    const selectedLanguage = i18n.language;
+
+    const formatDate = (inputDate) => {
+        const parts = inputDate.split('-');
+        const year = `${parts[2]}`;
+        const month = getMonthName(parts[1]);
+        const day = parts[0];
+        return `${month} ${day}, ${year}`;
+    }
+
+    const getMonthName = (month) => {
+        const monthsEn = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        const monthsRu = [
+            "Январь", "Февраль", "Март", "Априль", "Май", "Июнь",
+            "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+        ];
+
+        return selectedLanguage === 'en' ? monthsEn[parseInt(month) - 1] : monthsRu[parseInt(month) - 1];
+    }
+
+    useEffect(() => {
+        axios.get(`/activities/${id}`)
+            .then((res) => {
+                setData(res.data);
+                document.title = `QazSmart - ${res.data.name[selectedLanguage]}`;
+                setIsLoading(false);
+            })
+            .catch((error) => {
+                console.error(error);
+                alert('Ошибка при получении активности');
+            });
+        return () => {
+            document.title = `QazSmart`;
+        }
+    }, []);
 
     const tourPageStyle = {
         backgroundImage: `url(${backgroundImage})`,
@@ -16,34 +60,18 @@ const TourPage = ({ data }) => {
         backgroundPosition: '50% 35%',
     };
 
-    const formatDate = (inputDate) => {
-        const parts = inputDate.split('-');
-
-        const year = `20${parts[2]}`;
-        const month = getMonthName(parts[1]);
-        const day = parts[0];
-
-        return `${month} ${day}, ${year}`;
+    if (isLoading) {
+        return <div className="text-4xl">...Loading</div>
     }
 
-    const getMonthName = (month) => {
-        const months = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
-        return months[parseInt(month) - 1];
-    }
-
-    const findTourById = (id) => {
-        return data.find((tour) => tour.id.toString() === id);
-    };
-
-    const selectedTour = findTourById(id);
+    const name = data.name[selectedLanguage];
+    const place = data.place[selectedLanguage];
+    const category = data.category[selectedLanguage];
 
     const stats = [
-        { name: 'Price', stat: selectedTour.cost },
-        { name: 'Date', stat: formatDate(selectedTour.date) },
-        { name: 'Weather', stat: '23°C' },
+        { name: t("actInfo.price"), stat: data.price },
+        { name: t("actInfo.date"), stat: formatDate(data.date) },
+        { name: t("actInfo.weather"), stat: '23°C' },
     ];
 
     return (
@@ -53,7 +81,18 @@ const TourPage = ({ data }) => {
                 <Header dark={true} />
             </div>
             <div className="container mx-auto flex flex-col justify-center gap-y-12 sm:gap-y-14 py-8 flex-grow">
-                <TourInfo id={id} name={name} place={selectedTour.place} descriptions={selectedTour.descriptions} stats={stats} />
+                <TourInfo
+                    id={data._id}
+                    name={name}
+                    place={place}
+                    descriptions={data.descriptions}
+                    stats={stats}
+                    category={category}
+                    imageUrl={data.imageUrl}
+                />
+            </div>
+            <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 relative">
+                <PageMap coord={data.coordinates} />
             </div>
             <Footer />
         </div>

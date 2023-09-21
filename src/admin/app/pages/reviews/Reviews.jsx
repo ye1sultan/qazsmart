@@ -1,11 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Footer from "./components/Footer";
-import { fetchActivities } from "./redux/slices/activities";
-import Activities from "./sections/Activities";
-import Hero from "./sections/Hero";
-import Map from "./sections/Map";
-import Reviews from "./sections/Reviews";
+import SideBar from "../../SideBar";
+import Title from "../components/Title";
+import Review from "./Review";
 
 const reviews = [
     {
@@ -42,41 +37,41 @@ const reviews = [
     }
 ];
 
-const MainPage = () => {
-    const dispatch = useDispatch();
-    const { activities } = useSelector((state) => state.activities);
+export default function Reviews() {
+    const calculateAverageStars = (reviews) => {
+        if (reviews.length === 0) {
+            return 0;
+        }
 
-    useEffect(() => {
-        document.title = "QazSmart - Home";
+        const totalStars = reviews.reduce((sum, review) => {
+            return sum + parseFloat(review.stars);
+        }, 0);
 
-        dispatch(fetchActivities());
+        const averageStars = totalStars / reviews.length;
 
-        return (() => {
-            document.title = "QazSmart";
-        });
-    }, []);
-
-
-    const collectCoordinates = (activities) => {
-        const coordinatesArray = activities.items.map((activity) => ({
-            name: activity.name,
-            coordinates: activity.coordinates,
-        }));
-
-        return coordinatesArray;
+        return averageStars.toFixed(1);
     }
 
-    const allCoordinates = collectCoordinates(activities);
-
     return (
-        <div>
-            <Hero />
-            <Activities activities={activities.items} />
-            <Map coord={allCoordinates} />
-            <Reviews data={reviews} />
-            <Footer />
-        </div >
+        <>
+            <SideBar>
+                <Title text={"Отзывы"} />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                    <div className="py-4">
+                        <div className="text-lg font-medium">
+                            {`Количество отзывов ${reviews.length}`}
+                        </div>
+                        <div className="text-lg font-medium">
+                            {`В среднем ${calculateAverageStars(reviews)} из 5 звезд`}
+                        </div>
+                        <div className="w-full max-w-7xl mx-auto flex flex-col gap-y-10 mt-4">
+                            {reviews.map((review) => (
+                                <Review data={review} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </SideBar>
+        </>
     );
 }
-
-export default MainPage;

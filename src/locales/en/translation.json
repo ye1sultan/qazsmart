@@ -1,0 +1,33 @@
+{
+    "header": {
+        "activities": "Activities",
+        "reviews": "Reviews",
+        "contactUs": "Contact Us"
+    },
+    "main": {
+        "hero": {
+            "title": "Discover the Beauty of Kazakhstan",
+            "subtitle": "Immerse Yourself in the Rich Culture and Scenic Landscapes of Kazakhstan",
+            "buttonText": "Start Your Journey"
+        }
+    },
+    "activities": {
+        "title": "Activities",
+        "buttonText": "All Activities"
+    },
+    "reviews": {
+        "title": "Reviews"
+    },
+    "footer": {
+        "contactUsText": "Contact Us",
+        "copyrightText": "© 2023 QazSmart, Inc. All rights reserved."
+    },
+    "actPage": {
+        "title": "All Activities"
+    },
+    "actInfo": {
+        "price": "Price",
+        "date": "Date",
+        "weather": "Weather"
+    }
+}

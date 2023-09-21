@@ -1,0 +1,33 @@
+{
+    "header": {
+        "activities": "Активности",
+        "reviews": "Отзывы",
+        "contactUs": "Контакты"
+    },
+    "main": {
+        "hero": {
+            "title": "Откройте Красоты Казахстана",
+            "subtitle": "Погрузитесь в богатую культуру и живописные пейзажи Казахстана",
+            "buttonText": "Начать путешествия"
+        }
+    },
+    "activities": {
+        "title": "Активности",
+        "buttonText": "Все Активности"
+    },
+    "reviews": {
+        "title": "Отзывы"
+    },
+    "footer": {
+        "contactUsText": "Свяжитесь с нами",
+        "copyrightText": "© 2023 QazSmart, Inc. Все права защищены."
+    },
+    "actPage": {
+        "title": "Все Активности"
+    },
+    "actInfo": {
+        "price": "Цена",
+        "date": "Дата",
+        "weather": "Погода"
+    }
+}
