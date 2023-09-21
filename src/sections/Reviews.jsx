@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import Empty from "../components/Empty";
-import Review from "../components/Review";
-import Title from "../components/Title";
+import Empty from "./components/Empty";
+import Review from "./components/Review";
+import Title from "./components/Title";
 
 const Reviews = () => {
     
