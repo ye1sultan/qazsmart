@@ -10,7 +10,7 @@ import TourPage from './sections/tours/TourPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchAuthMe, selectIsAuth } from './redux/slices/auth';
-
+			//test
 const App = () => {
 	const dispatch = useDispatch();
 	const isAuth = useSelector(selectIsAuth);
