@@ -1,17 +1,21 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import axios from "../axios";
 import backgroundImage from './assets/imgs/headers.jpg';
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Title from "./components/Title";
 import Notification from "./components/Notification";
+import Title from "./components/Title";
+
 const WriteReview = () => {
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
     const [text, setText] = useState('Успешно сохранено!');
     const [subText, setSubText] = useState('Перенаправляем вас на главную страницу.');
     const [state, setState] = useState('success');
+
+    const { t } = useTranslation();
 
     const [formData, setFormData] = useState({
         name: '',
@@ -91,16 +95,16 @@ const WriteReview = () => {
         <div className="min-h-screen flex flex-col">
             <Notification show={show} setShow={setShow} text={text} subText={subText} state={state} />
             <div className="w-full sticky z-50" style={allToursStyle}>
-                <div className="absolute inset-0 bg-gradient-to-t from-white" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#f4f7f7]" />
                 <Header dark={true} />
             </div>
             <div className="container mx-auto flex flex-col justify-start items-start py-8 flex-grow gap-y-12 sm:gap-y-14">
-                <Title name={`Write a review`} />
+                <Title name={t("writeReview.title")} />
                 <form onSubmit={handleSubmit} className='w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-start flex-wrap gap-y-5'>
                     <div className='w-full flex flex-col md:flex-row justify-start items-start gap-4'>
                         <div className='w-1/2'>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                                Name
+                                {t("writeReview.name")}
                             </label>
                             <div className="mt-1 relative rounded-md shadow-sm">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -121,7 +125,7 @@ const WriteReview = () => {
                         </div>
                         <div className='w-1/2'>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                                Email
+                                {t("writeReview.email")}
                             </label>
                             <div className="mt-1 relative rounded-md shadow-sm">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -143,7 +147,7 @@ const WriteReview = () => {
                     </div>
                     <div className='w-full max-w-xs'>
                         <div className="block text-sm font-medium text-gray-700 mb-1">
-                            Your rating: {formData.stars}
+                            {t("writeReview.rating")}: {formData.stars}
                         </div>
                         <div className='flex justify-start items-center gap-1'>
                             {[1, 2, 3, 4, 5].map((star) => (
@@ -161,7 +165,7 @@ const WriteReview = () => {
                     </div>
                     <div className='w-full'>
                         <label htmlFor="comment" className="block text-sm font-medium text-gray-700">
-                            Your comment
+                            {t("writeReview.comment")}
                         </label>
                         <div className="mt-1">
                             <textarea
@@ -179,7 +183,7 @@ const WriteReview = () => {
                             type='submit'
                             className='rounded-md px-4 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-sky-600 hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500'
                         >
-                            Send review
+                            {t("writeReview.btnText")}
                         </button>
                     </div>
                 </form>
