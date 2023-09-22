@@ -35,7 +35,7 @@ const AllActivities = () => {
     return (
         <div className="min-h-screen flex flex-col">
             <div className="w-full sticky z-50" style={allToursStyle}>
-                <div className="absolute inset-0 bg-gradient-to-t from-white" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#f4f7f7]" />
                 <Header dark={true} />
             </div>
             <div className={`container mx-auto flex flex-col justify-start items-start py-8 flex-grow ${activities.items ? "gap-y-12 sm:gap-y-14" : "gap-y-0"}`}>
