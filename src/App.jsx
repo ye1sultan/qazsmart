@@ -21,7 +21,7 @@ const App = () => {
 	}, []);
 
 	return (
-		<div className='bg-white font-mont'>
+		<div className='bg-[#f4f7f7] font-mont'>
 			<Router>
 				<Routes>
 					<Route path="/" element={<MainPage />} />
