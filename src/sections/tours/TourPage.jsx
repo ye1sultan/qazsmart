@@ -77,7 +77,7 @@ const TourPage = () => {
     return (
         <div className="min-h-screen flex flex-col">
             <div className="w-full sticky z-50" style={tourPageStyle}>
-                <div className="absolute inset-0 bg-gradient-to-t from-white" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#f4f7f7]" />
                 <Header dark={true} />
             </div>
             <div className="container mx-auto flex flex-col justify-center gap-y-12 sm:gap-y-14 py-8 flex-grow">
