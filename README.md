@@ -32,4 +32,4 @@ QazSmart is a web application dedicated to showcasing the beauty and diverse act
 
 ## Contact
 
-* If you have any questions or want to get in touch, [Yelsultan Niyaztay], at [niyaztaye@gmail.com].
+* If you have any questions or want to get in touch, [Yelsultan Niyaztay](niyaztaye@gmail.com).
