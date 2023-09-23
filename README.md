@@ -1,4 +1,4 @@
-# QazSmart - Explore Kazakhstan 🇰🇿
+# QazSmart - Explore Kazakhstan Google (Noto Color Emoji - Unicode 15.0)
 
 QazSmart is a web application dedicated to showcasing the beauty and diverse activities of Kazakhstan. Whether you're a traveler or a local resident, QazSmart is your gateway to discovering the hidden gems of this amazing country.
 
