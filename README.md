@@ -29,3 +29,7 @@ QazSmart is a web application dedicated to showcasing the beauty and diverse act
 - The backend of QazSmart is developed with [Node.js](https://nodejs.org/en) and [Express.js](https://expressjs.com/), providing a robust and scalable server.
 
 - Data is stored and managed using MongoDB, with [Mongoose](https://mongoosejs.com/) serving as the ODM.
+
+## Contact
+
+* If you have any questions or want to get in touch, [Yelsultan Niyaztay], at [niyaztaye@gmail.com].
