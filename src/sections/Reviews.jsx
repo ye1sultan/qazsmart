@@ -44,7 +44,7 @@ const Reviews = ({ data }) => {
     }));
 
     return (
-        <div id="reviews" className="container mx-auto flex flex-col justify-center gap-y-12 sm:gap-y-14 py-8">
+        <div id="reviews" className="container mx-auto flex flex-col justify-center gap-y-12 sm:gap-y-14 py-12">
             <Title name={`${t("reviews.title")}`} />
             {data && data.length > 0 ? (
                 <div className="w-full max-w-7xl mx-auto px-8 sm:px-10 lg:px-12 lg:grid lg:grid-cols-12 lg:gap-x-8">

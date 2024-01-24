@@ -31,9 +31,9 @@ export default function Activity({ _id, name, text, date, price, category, image
     const formatDate = (inputDate) => {
         const parts = inputDate.split('-');
 
-        const day = parts[2];
+        const year = parts[2];
         const month = getMonthName(parts[1]);
-        const year = parts[0];
+        const day = parts[0];
 
         return `${month} ${day}, ${year}`;
     }
@@ -59,7 +59,8 @@ export default function Activity({ _id, name, text, date, price, category, image
             <div className="relative">
                 <div className="relative w-full h-56 rounded-tl-lg rounded-tr-lg overflow-hidden">
                     <img
-                        src={`${process.env.REACT_APP_BASE_API}${imageUrl}`}
+                        // src={`${process.env.REACT_APP_BASE_API}${imageUrl}`}
+                        src={`${imageUrl}`}
                         alt="Region"
                         className="w-full h-full object-center object-cover"
                     />

@@ -10,7 +10,7 @@ import Login from './admin/auth/Login';
 import { fetchAuthMe, selectIsAuth } from './redux/slices/auth';
 import AllActivities from './sections/AllActivities';
 import WriteReview from './sections/WriteReview';
-import TourPage from './sections/tours/TourPage';
+import TourPage from './sections/tours/ActivityPage';
 
 const App = () => {
 	const dispatch = useDispatch();
