@@ -1,3 +1,4 @@
+import React from 'react';
 export default function Info({ data }) {
     return (
         <dl className="grid grid-cols-1 gap-5 mt-10">

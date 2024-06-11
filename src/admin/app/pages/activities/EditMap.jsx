@@ -1,5 +1,5 @@
 import { GoogleMap, InfoWindowF, MarkerF, useLoadScript } from "@react-google-maps/api";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Map({ coord, setFormData }) {
     const { isLoaded } = useLoadScript({

@@ -1,5 +1,6 @@
+import React from 'react';
 import { useTranslation } from "react-i18next";
-import Info from "./Info";
+import Info from "./info";
 
 export default function TourInfo({ name, place, descriptions, stats, category, imageUrl }) {
     const { i18n } = useTranslation();

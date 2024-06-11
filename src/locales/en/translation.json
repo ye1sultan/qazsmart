@@ -1,46 +1,46 @@
 {
-    "header": {
-        "activities": "Activities",
-        "reviews": "Reviews",
-        "contactUs": "Contact Us"
-    },
-    "main": {
-        "hero": {
-            "title": "Discover the Beauty of Kazakhstan",
-            "subtitle": "Immerse Yourself in the Rich Culture and Scenic Landscapes of Kazakhstan",
-            "buttonText": "Start Your Journey"
-        }
-    },
-    "activities": {
-        "title": "Activities",
-        "buttonText": "All Activities"
-    },
-    "reviews": {
-        "title": "Reviews",
-        "basedOn": "Based on",
-        "reviews": "reviews",
-        "thoughtsText": "Share your thoughts",
-        "thoughtsSubText": "If you've tried our tours or activities in Kazakhstan, share your thoughts with fellow travelers!",
-        "btnText": "Write a review"
-    },
-    "footer": {
-        "contactUsText": "Contact Us",
-        "copyrightText": "© 2023 QazSmart, Inc. All rights reserved."
-    },
-    "actPage": {
-        "title": "All Activities"
-    },
-    "actInfo": {
-        "price": "Price",
-        "date": "Date",
-        "weather": "Weather"
-    },
-    "writeReview": {
-        "title": "Write a review",
-        "name": "name",
-        "email": "email",
-        "rating": "Your rating",
-        "comment": "Your comment",
-        "btnText": "Send review"
+  "header": {
+    "activities": "Activities",
+    "reviews": "Reviews",
+    "contactUs": "Contact Us"
+  },
+  "main": {
+    "hero": {
+      "title": "Discover the Art and Beauty of Kazakhstan",
+      "subtitle": "Immerse yourself in Kazakhstan's rich culture and scenic landscapes. Experience ancient traditions, modern innovations, majestic mountains, vibrant cities, and the hospitality of the Kazakh people.",
+      "buttonText": "Start Your Journey"
     }
+  },
+  "activities": {
+    "title": "Activities",
+    "buttonText": "All Activities"
+  },
+  "reviews": {
+    "title": "Reviews",
+    "basedOn": "Based on",
+    "reviews": "reviews",
+    "thoughtsText": "Share your thoughts",
+    "thoughtsSubText": "If you've tried our tours or activities in Kazakhstan, share your thoughts with fellow travelers!",
+    "btnText": "Write a review"
+  },
+  "footer": {
+    "contactUsText": "Contact Us",
+    "copyrightText": "© 2023 QazSmart, Inc. All rights reserved."
+  },
+  "actPage": {
+    "title": "All Activities"
+  },
+  "actInfo": {
+    "price": "Price",
+    "date": "Date",
+    "weather": "Weather"
+  },
+  "writeReview": {
+    "title": "Write a review",
+    "name": "name",
+    "email": "email",
+    "rating": "Your rating",
+    "comment": "Your comment",
+    "btnText": "Send review"
+  }
 }

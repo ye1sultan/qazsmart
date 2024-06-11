@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SideBar from "../../SideBar";
 import Title from "../components/Title";
 import Review from "./Review";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { fetchReviews } from "../../../../redux/slices/reviews";
 
 export default function Reviews() {

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import backgroundImage from '../assets/imgs/footer-bg.jpg';
 

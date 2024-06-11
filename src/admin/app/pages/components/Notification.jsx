@@ -1,5 +1,5 @@
 import { Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 
 export default function Notification({ show, setShow, text, subText, state }) {
     return (

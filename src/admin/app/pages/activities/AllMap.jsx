@@ -1,5 +1,5 @@
 import { GoogleMap, InfoWindow, useLoadScript, MarkerF } from "@react-google-maps/api";
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 export default function AllMap({ coord }) {
     const { isLoaded } = useLoadScript({

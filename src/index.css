@@ -2,11 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-Main Primary color: sky-300 - background-color: rgb(125 211 252)
-Gray text/color: slate-500 - color: rgb(100 116 139)
-Red error/text/color: #ff0000
-*/
-html {
-    scroll-behavior: smooth;
+.mouse {
+  &::before {
+    content: "";
+    width: 4px;
+    height: 10px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(212 212 212);
+    border-radius: 20px;
+    opacity: 1;
+    animation: wheel 2s infinite;
+    -webkit-animation: wheel 2s infinite;
+  }
+}
+
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 30px;
+  }
+}
+
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0;
+    top: 30px;
+  }
 }

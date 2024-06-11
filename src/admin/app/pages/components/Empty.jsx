@@ -1,3 +1,4 @@
+import React from 'react';
 export default function Empty({ text, subText, btnText, href, svg }) {
     return (
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 text-center my-auto">

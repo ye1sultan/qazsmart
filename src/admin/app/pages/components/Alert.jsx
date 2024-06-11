@@ -1,4 +1,4 @@
-import { Fragment, useRef } from 'react';
+import React, { Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
 export default function Alert({ open, setOpen, text, subText, btnText, deleteClicked }) {
