@@ -1,6 +1,6 @@
 {
   "header": {
-    "activities": "Activities",
+    "activities": "Tours",
     "reviews": "Reviews",
     "contactUs": "Contact Us"
   },
@@ -12,8 +12,8 @@
     }
   },
   "activities": {
-    "title": "Activities",
-    "buttonText": "All Activities"
+    "title": "Most popular tours",
+    "buttonText": "See all tours"
   },
   "reviews": {
     "title": "Reviews",
@@ -25,10 +25,10 @@
   },
   "footer": {
     "contactUsText": "Contact Us",
-    "copyrightText": "© 2023 QazSmart, Inc. All rights reserved."
+    "copyrightText": "2024 QazSmart."
   },
   "actPage": {
-    "title": "All Activities"
+    "title": "All Tour in Kazakhstan"
   },
   "actInfo": {
     "price": "Price",

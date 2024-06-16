@@ -1,4 +1,6 @@
+const { screens } = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -13,12 +15,13 @@ module.exports = {
       mont: ['Montserrat', 'sans-serif'],
       georgia: ['Georgia', 'serif'],
     },
+    screens: {
+      "xs": "400px",
+      ...screens,
+    },
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
     },
     extend: {
       keyframes: {

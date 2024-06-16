@@ -12,6 +12,17 @@ export const fetchActivities = createAsyncThunk('activities/fetchActivities', as
     }
 });
 
+export const fetchActivityById = createAsyncThunk('activities/fetchActivityById', async (id) => {
+    try {
+        const { data } = await axios.get(`/activities/${id}`);
+        return data;
+    } catch (error) {
+        console.error("Failed to fetch the activity from the server. Using sample data instead.", error);
+        const sampleActivity = sampleActivities.find(activity => activity._id === id);
+        return sampleActivity || null;
+    }
+});
+
 export const fetchRemoveActivities = createAsyncThunk('activities/fetchRemoveActivities', async (id) => {
     axios.delete(`/activities/${id}`);
 });
@@ -19,8 +30,12 @@ export const fetchRemoveActivities = createAsyncThunk('activities/fetchRemoveAct
 const initialState = {
     activities: {
         items: [],
-        status: 'loading'
-    }
+        status: 'loading',
+    },
+    selectedActivity: {
+        item: null,
+        status: 'idle',
+    },
 };
 
 const activitiesSlice = createSlice({
@@ -29,6 +44,7 @@ const activitiesSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
+            // Handle fetchActivities
             .addCase(fetchActivities.pending, (state) => {
                 state.activities.items = [];
                 state.activities.status = 'loading';
@@ -41,6 +57,20 @@ const activitiesSlice = createSlice({
                 state.activities.items = [];
                 state.activities.status = 'error';
             })
+            // Handle fetchActivityById
+            .addCase(fetchActivityById.pending, (state) => {
+                state.selectedActivity.item = null;
+                state.selectedActivity.status = 'loading';
+            })
+            .addCase(fetchActivityById.fulfilled, (state, action) => {
+                state.selectedActivity.item = action.payload;
+                state.selectedActivity.status = 'loaded';
+            })
+            .addCase(fetchActivityById.rejected, (state) => {
+                state.selectedActivity.item = null;
+                state.selectedActivity.status = 'error';
+            })
+            // Handle fetchRemoveActivities
             .addCase(fetchRemoveActivities.pending, (state, action) => {
                 state.activities.items = state.activities.items.filter(obj => obj._id !== action.meta.arg);
             });

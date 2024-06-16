@@ -1,6 +1,6 @@
 {
   "header": {
-    "activities": "Активности",
+    "activities": "Туры",
     "reviews": "Отзывы",
     "contactUs": "Контакты"
   },
@@ -12,8 +12,8 @@
     }
   },
   "activities": {
-    "title": "Активности",
-    "buttonText": "Все Активности"
+    "title": "Самые популярные туры",
+    "buttonText": "Посмотреть все туры"
   },
   "reviews": {
     "title": "Отзывы",
@@ -25,10 +25,10 @@
   },
   "footer": {
     "contactUsText": "Свяжитесь с нами",
-    "copyrightText": "© 2023 QazSmart, Inc. Все права защищены."
+    "copyrightText": "2024 QazSmart."
   },
   "actPage": {
-    "title": "Все Активности"
+    "title": "Все туры в Казахстане"
   },
   "actInfo": {
     "price": "Цена",

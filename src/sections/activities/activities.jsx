@@ -1,57 +1,30 @@
-import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchActivities } from "../../redux/slices/activities";
+import { useNavigate } from "react-router-dom";
+import { Button } from "src/@/components/ui/button";
+import { ArrowCircleRight } from "../assets/icons/icons";
 import Title from "../components/title";
-import Activity from "./components/activity";
-import { EmptyActivities } from "./empty";
+import { Bento } from "./bento";
 
 const Activities = () => {
-  const dispatch = useDispatch();
+  const { t } = useTranslation();
+  const navigate = useNavigate();
 
-  const { t, i18n } = useTranslation();
-  const selectedLanguage = i18n.language;
-
-  const activities = useSelector((state) => state.activities.activities.items);
-
-  useEffect(() => {
-    dispatch(fetchActivities());
-  }, [dispatch]);
+  const handleClick = () => {
+    navigate("/activities");
+  };
 
   return (
     <div
       id="activities"
-      className="container mx-auto flex flex-col justify-center gap-y-12 sm:gap-y-14 py-8"
+      className="max-w-[1526px] w-full h-full mx-auto flex flex-col gap-y-10 px-4"
     >
-      <Title name={`${t("activities.title")}`} />
-      {activities && activities.length > 0 ? (
-        <>
-          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center flex-wrap gap-y-10 gap-x-20">
-            {activities.map((activity) => (
-              <Activity
-                key={activity._id}
-                _id={activity._id}
-                name={activity.name[selectedLanguage].toLowerCase()}
-                category={activity.category[selectedLanguage]}
-                text={activity.text[selectedLanguage]}
-                date={activity.date}
-                price={activity.price}
-                imageUrl={activity.imageUrl}
-              />
-            ))}
-          </div>
-          <div className="w-full flex justify-center items-center capitalize mt-10">
-            <a
-              href="/all-activities"
-              className="rounded-md bg-sky-600 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
-            >
-              {t("activities.buttonText")}
-            </a>
-          </div>
-        </>
-      ) : (
-        <EmptyActivities />
-      )}
+      <div className="flex justify-between items-center mr-4">
+        <Title name={`${t("activities.title")}`} />
+        <Button onClick={handleClick} size="icon" variant="ghost">
+          <ArrowCircleRight className="w-8 h-8 md:w-12 md:h-12" />
+        </Button>
+      </div>
+      <Bento />
     </div>
   );
 };
