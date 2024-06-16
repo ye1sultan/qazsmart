@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 
 import Footer from "../components/footer/footer";
-import Header from "../components/header";
 import Title from "../components/title";
+import Header from "../components/header";
 
 import { Form } from "./form";
 
